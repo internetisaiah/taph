@@ -4,10 +4,13 @@ These are scripts I created to help maintainers manage the static site generator
 
 ## Scripts
 
-* `beautify_logs.py`: [this script](scripts/beautify_logs.py) converts Antora's JSON logs into an interactive table, allowing docs maintainers to directly open files from their text editor's preview window.
-* `cleanup_content.py`: [this script](scripts/cleanup_content.py) runs the scripts in the [modules directory](./modules) which collectively: adds the Antora module to all 'xref' and 'image' attributes, adds missing spaces after periods, fixes all newlines in each file, and fixes all URLs.
-* `create_csv.py`: [this script](scripts/create_csv.py) generates a Comma-Separated Values (CSV) file where each doc is added to a row along with its title, section, subsection(s), and URL.
-* `minify_css.py`: [this script](scripts/minify_css.py) navigates to the CSS directory within the UI bundle of a standard Antora configuration (`<project-root>/ui-bundle/css/`), then merges all beautified CSS files together into a single file (`site.css`), so front-end maintainers can easily work on design elements while still maximizing site responsiveness.
+| Name                 | URL                                       | Description                                                                                                                              |
+|----------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `beautify_logs.py`   | [URL](scripts/beautify_logs.py)           | Converts Antora's JSON logs into an interactive table, allowing docs maintainers to open files from their preview window.                |
+| `cleanup_content.py` | [URL](scripts/cleanup_content.py)         | Runs scripts in the [modules directory](./modules) which add Antora module attributes, fix spaces, newlines, and URLs.                   |
+| `create_csv.py`      | [URL](scripts/create_csv.py)              | Generates a CSV file with doc information like title, sections, subsections, and URLs.                                                   |
+| `minify_css.py`      | [URL](scripts/minify_css.py)              | Merges beautified CSS files into a single file (`site.css`) for front-end maintainers to work on design while maximizing responsiveness. |
+
 
 ## Quick start
 
