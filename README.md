@@ -32,7 +32,7 @@ Make each script executable in your shell environment.
 chmod +x beautify_logs.py cleanup_content.py create_csv.py minify_css.py
 ```
 
-Since a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) is located on the first line of each script (`#!/usr/bin/env python3`), you don't need to invoke Python to use these scripts. Simply enter the path to the script you'd like to use. For example:
+Since a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) is located on the first line of each script (`#!/usr/bin/env python3`), you don't need to invoke Python manually. Simply enter the path to the script you'd like to use. For example:
 
 ```shell
 ./scripts/beautify_logs.py
