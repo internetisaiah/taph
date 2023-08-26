@@ -20,10 +20,10 @@ To run a script, you'll need to install [Python](https://www.python.org/download
 python --version
 ```
 
-If Python's installed, open the `docs-scripts` directory.
+If Python's installed, open the `scripts` directory.
 
 ```shell
-cd <path-to-script-directory>/docs-scripts
+cd <path-to-script-directory>/docs-scripts/scripts
 ```
 
 Make each script executable in your shell environment.
