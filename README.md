@@ -1,6 +1,6 @@
 # docs-scripts
 
-These are scripts I created to help maintainers manage the static site generator (Antora) and content source files (in AsciiDoc) used to build [Kobiton Docs](https://docs.kobiton.com/).
+I created these scripts to manage the static site generator (Antora) and source files (in AsciiDoc) used to build [Kobiton Docs](https://docs.kobiton.com/).
 
 ## Scripts
 
@@ -14,16 +14,16 @@ These are scripts I created to help maintainers manage the static site generator
 
 ## Quick start
 
-To run a script, you'll need [Python](https://www.python.org/downloads/). Run the following commands to check if it's installed:
+To run a script, you'll need to install [Python](https://www.python.org/downloads/). Run the following commands to see if it's installed:
 
 ```plaintext
 python --version
 ```
 
-If Python's installed, open the script directory.
+If Python's installed, open the `docs-scripts` directory.
 
 ```shell
-cd <path-to-script-directory>
+cd <path-to-script-directory>/docs-scripts
 ```
 
 Make each script executable in your shell environment.
