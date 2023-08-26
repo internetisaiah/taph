@@ -11,7 +11,7 @@ These are scripts I created to help maintainers manage the static site generator
 
 ## Quick start
 
-To run a script, you'll need [Python](https://www.python.org/downloads/). Run the following commands to check if they're installed:
+To run a script, you'll need [Python](https://www.python.org/downloads/). Run the following commands to check if it's installed:
 
 ```plaintext
 python --version
