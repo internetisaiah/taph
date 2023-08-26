@@ -1,6 +1,6 @@
 # docs-scripts
 
-I created these scripts to help manage the static site generator (Antora) and source files (in AsciiDoc) used to build [Kobiton Docs](https://docs.kobiton.com/).
+I created these scripts to help manage the static site generator (Antora) and the content source files (in AsciiDoc) used to build [Kobiton Docs](https://docs.kobiton.com/).
 
 ## Scripts
 
