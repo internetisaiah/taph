@@ -65,7 +65,7 @@ def calculate_md5(file_path):
 
 # Minify the 'site.css' file located in 'DIRECTORIES', but only if
 # changes where made to one or more CSS file in that directory.
-def minify_css():
+def main():
     for directory in DIRECTORIES:
         temp_file = os.path.join(get_directory_path(directory), "temp.css")
         merge_and_minify_css_files(get_directory_path(directory), temp_file)
@@ -81,4 +81,4 @@ def minify_css():
 
 
 if __name__ == "__main__":
-    minify_css()
+    main()
