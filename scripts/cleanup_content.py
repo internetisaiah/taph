@@ -9,7 +9,7 @@
 import os
 import glob
 import importlib
-from resources.get_project_root import get_project_root
+from utils.get_project_root import get_project_root
 
 # Scripts to run from './modules'.
 SCRIPTS = {

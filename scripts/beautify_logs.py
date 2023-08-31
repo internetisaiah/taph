@@ -6,7 +6,7 @@
 import os
 import json
 from collections import defaultdict
-from resources.get_project_root import get_project_root
+from utils.get_project_root import get_project_root
 
 # Get the project root directory
 PROJECT_ROOT = get_project_root()
@@ -31,11 +31,11 @@ def get_output_file():
 
 
 # Check if there are multiple input log files and return a title for each one's output file.
-def get_title():
-    if not MULTIPLE_LOGS:
-        return f'Beautified'
+def get_title(log_name=None):
+    if log_name is None:
+        return 'Beautified logs'
     else:
-        return [f'{name.capitalize()}' for name in MULTIPLE_LOGS]
+        return f'Beautified {log_name.lower()} logs'
 
 
 # For each log file, create a dictionary with the following information:
@@ -46,21 +46,21 @@ def create_dictionary(default_log):
 
     for entry in default_log:
         # Get default JSON logs.
-        default_logs = json.loads(entry)
+        log = json.loads(entry)
 
         # First-level dictionary
-        antora_level = default_logs['level']
+        antora_level = log['level']
 
         # Second-level dictionary.
-        unique_id = default_logs['time']
+        unique_id = log['time']
 
         # Variables for second-level dictionary.
-        message = default_logs['msg']
-        path = os.path.relpath(default_logs['file']['path'], PROJECT_ROOT)
+        message = log['msg']
+        path = os.path.relpath(log['file']['path'], PROJECT_ROOT)
         module = path.split('modules/')[1].split('/')[
             0] if 'modules' in path else 'N/A'
         xref = f"xref:../{path}[{path.split('/')[-1]}]"
-        line = default_logs['file'].get('line', 'N/A')
+        line = log['file'].get('line', 'N/A')
 
         # Create the following dictionary using the previous variables.
         dictionary[antora_level][unique_id] = {
@@ -102,9 +102,9 @@ def count_issues(sorted_dictionary):
 
 
 # Reformat logs into a table
-def create_table(sorted_dictionary):
+def create_table(sorted_dictionary, current_log):
     # Set title
-    table = f'= {get_title()} logs\n\n'
+    table = f'= {current_log}\n\n'
 
     # Create table of contents with count of issues.
     table += f'.Table of contents\n'
@@ -126,9 +126,9 @@ def create_table(sorted_dictionary):
             for antora_level, unique_id in sorted_dictionary[level].items():
                 for issue_details in unique_id:
                     table += f"|{issue_details['message']}\n" \
-                              f"|{issue_details['module']}\n" \
-                              f"|{issue_details['xref']}\n" \
-                              f"|{issue_details['line']}\n"
+                             f"|{issue_details['module']}\n" \
+                             f"|{issue_details['xref']}\n" \
+                             f"|{issue_details['line']}\n\n"
             table += '|===\n\n'
         else:
             table += f'_NONE_\n\n'
@@ -149,7 +149,8 @@ def beautify_logs():
         with open(log_details, 'r') as f:
             default_log = f.readlines()
 
-        beautified_logs = create_table(sort_dictionary(create_dictionary(default_log)))
+        log_title = get_title(MULTIPLE_LOGS[log_name] if MULTIPLE_LOGS else None)
+        beautified_logs = create_table(sort_dictionary(create_dictionary(default_log)), log_title)
 
         # Write the processed content to the output file
         with open(output_log_files[log_name], 'w') as f:

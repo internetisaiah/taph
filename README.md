@@ -11,7 +11,6 @@ I created these scripts to help manage the static site generator (Antora) and th
 | `create_csv.py`      | [File](scripts/create_csv.py)              | Generates a CSV file with the following information for each document: title, section, subsection, and site URL.                                                   |
 | `minify_css.py`      | [File](scripts/minify_css.py)              | Merges all human-readable CSS files from the [UI bundle directory](./ui-bundle/css) into a single, minifed file (`site.css`), which improves front-end development workflows while increasing site responsiveness. |
 
-
 ## Quick start
 
 To run a script, you'll need to install [Python](https://www.python.org/downloads/). Run the following commands to see if it's installed:

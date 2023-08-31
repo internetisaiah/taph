@@ -7,7 +7,7 @@
 import os
 import subprocess
 import hashlib
-from resources.get_project_root import get_project_root
+from utils.get_project_root import get_project_root
 
 
 # Get the project root directory

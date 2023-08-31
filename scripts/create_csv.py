@@ -5,7 +5,7 @@
 import os
 import csv
 from html.parser import HTMLParser
-from resources.get_project_root import get_project_root
+from utils.get_project_root import get_project_root
 
 
 class MyHTMLParser(HTMLParser):
