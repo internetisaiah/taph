@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-# Beautifies logs in 'logs/' and adds 'xref:' attributes so
-# maintainers can directly open files from the preview window.
+# Beautifies the logs in 'logs/' by creating an AsciiDoc table and a cross-reference
+# to each file, allowing them to be opened directly from the preview window.
 
 import os
 import json
 from collections import defaultdict
-from utils.get_project_root import get_project_root
+from utils.root import get_project_root
 
 # Get the project root directory
 PROJECT_ROOT = get_project_root()

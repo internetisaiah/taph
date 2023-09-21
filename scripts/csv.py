@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
-# Makes a '.csv' file containing a full list of site URLs to add to a spreadsheet for large-scale docs reviews.
+# Creates a '.csv' file containing a full list of site URLs to add to a spreadsheet for large-scale docs reviews.
 
 import os
 import csv
 from html.parser import HTMLParser
-from utils.get_project_root import get_project_root
+from utils.root import get_project_root
 
 
 # Use HTMLParser to parse through the generated site's primary './build/index.html' file.

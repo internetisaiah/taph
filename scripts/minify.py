@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-# Minifies CSS files in the UI bundle directory which improves site performance, while allowing
-# contributors to make design changes more easily. 'minify_css' only replaces 'site.css' if changes to
-# CSS files are made.
+# All CSS content in the UI bundle directory is copied to 'site.css' then minified.
+# Antora uses 'site.css' (improving site performance), while designers continue to use
+# the original, non-minified CSS files (enhancing human readability).
 
 import os
 import subprocess
 import hashlib
-from utils.get_project_root import get_project_root
+from utils.root import get_project_root
 
 
 # Get the project root directory

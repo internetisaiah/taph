@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 
-# Cleans up the content in '<project-root>/docs/utils/' using the scripts in the 'utils' directory:
-# 'add_module_to_attributes': Adds the module to all 'xref' and 'image' AsciiDoc attributes
-# 'add_spaces_after_periods': Adds missing spaces after periods
-# 'fix_newlines': Fixes all newlines
-# 'fix_urls': Fixes all URLs
+# A general cleanup script that adds the relative module to each AsciiDoc attribute,
+# adds spaces after periods if they're missing, fixes all newlines, and fixes all URLs.
+#
+# This is preformed using the following:
+# '../utils/modules.py'
+# '../utils/spaces.py'
+# '../utils/newlines.py'
+# '../utils/urls.py'
 
 import os
 import glob
 import importlib
-from utils.get_project_root import get_project_root
+from utils.root import get_project_root
 
-# Scripts to run from './utils'.
+# Scripts to run from '../utils/'.
 SCRIPTS = {
-    'add_module_to_attributes': 'utils.add_module_to_attributes.add_module_to_attributes',
-    'add_spaces_after_periods': 'utils.add_spaces_after_periods.add_spaces_after_periods',
-    'fix_newlines': 'utils.fix_newlines.fix_newlines',
-    'fix_urls': 'utils.fix_urls.fix_urls'
+    'modules': 'utils.modules.modules',
+    'spaces': 'utils.spaces.spaces',
+    'newlines': 'utils.fix_newlines.fix_newlines',
+    'urls': 'utils.urls.urls'
 }
 
 # Directories in '<project-root>/docs/utils/' to ignore.
