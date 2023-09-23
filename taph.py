@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Antora Project Helper
+# Antora Docs Site Helper (adsh).
 
 import subprocess
 import argparse
@@ -9,8 +9,7 @@ from scripts.beautify import main as beautify
 from scripts.minify import main as minify
 from scripts.csv import main as csv
 
-# Constants:
-# Dictionary which maps optional arguments to corresponding functions in './scripts'.
+# Dictionary mapping optional arguments to corresponding functions in './scripts'.
 APH_SCRIPTS = {
     'general': general,
     'beautify': beautify,
@@ -33,7 +32,7 @@ def main():
                         help="your antora project's root directory "
                              "(default: the value of 'git rev-parse --show-toplevel')")
     parser.add_argument("-q", "--quiet",
-                        help="suppresses all aph notifications",
+                        help="suppress all 'taph' notifications in the terminal",
                         action="store_true")
     parser.add_argument("-b", "--beautify",
                         help="beautify your logs by creating an asciidoc table containing cross-references "
