@@ -10,7 +10,7 @@ from scripts.minify import main as minify
 from scripts.csv import main as csv
 
 # Constants:
-# Dictionary mapping optional arguments to corresponding functions in './scripts'.
+# Dictionary which maps optional arguments to corresponding functions in './scripts'.
 APH_SCRIPTS = {
     'general': general,
     'beautify': beautify,
@@ -18,7 +18,7 @@ APH_SCRIPTS = {
     'csv': csv
 }
 
-# Antora project's root directory.
+# The Antora project's root directory.
 PROJECT_ROOT = subprocess.check_output(['git', 'rev-parse', '--show-toplevel']).decode('utf-8').strip()
 
 
