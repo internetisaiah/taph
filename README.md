@@ -1,39 +1,61 @@
-# docs-scripts
+# taph
 
-I created these scripts to help manage the static site generator (Antora) and the content source files (in AsciiDoc) used to build [Kobiton Docs](https://docs.kobiton.com/).
+`taph`, The Antora Project Helper, is a Python-based, command-line tool allowing you to easily beautify logs, minify CSS files, and more.
 
-## Scripts
-
-| Name                 | Go to file                                 | Description                                                                                                                              |
-|----------------------|--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `beautify_logs.py`   | [File](scripts/beautify_logs.py)           | Converts Antora's JSON logs into a "beautified," interactive table, so docs maintainers can open flagged files directly from their preview window.                |
-| `cleanup_content.py` | [File](scripts/cleanup_content.py)         | Runs all scripts in the [modules directory](./modules) which: adds the module name to Antora attributes, fixes errors with spaces and periods, fixes newlines, and fixes URLs formatting.                   |
-| `create_csv.py`      | [File](scripts/create_csv.py)              | Generates a CSV file with the following information for each document: title, section, subsection, and site URL.                                                   |
-| `minify_css.py`      | [File](scripts/minify_css.py)              | Merges all human-readable CSS files from the [UI bundle directory](./ui-bundle/css) into a single, minifed file (`site.css`), which improves front-end development workflows while increasing site responsiveness. |
-
+These scripts were originally created to help manage my _own_ Antora project, so their usefulness for your project may vary. For more information, see [Arguments](#arguments).
 
 ## Quick start
 
-To run a script, you'll need to install [Python](https://www.python.org/downloads/). Run the following commands to see if it's installed:
+First, check if [Python](https://www.python.org/downloads/) is installed.
 
 ```plaintext
 python --version
 ```
 
-If Python's installed, open the `scripts` directory.
+If Python's installed, make `./taph.py` executable in your shell environment.
 
 ```shell
-cd <path-to-script-directory>/docs-scripts/scripts
+chmod +x <path-to-taph>/taph.py
 ```
 
-Next, make each script executable in your shell environment.
+You can pass one or more optional arguments to `./taph.py` within a single command. For example:
 
 ```shell
-chmod +x beautify_logs.py cleanup_content.py create_csv.py minify_css.py
+./taph.py -b -m
 ```
 
-Since there's a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) on the first line of every script (`#!/usr/bin/env python3`), you don't need to invoke Python manually. Simply enter the path to the script you'd like to use. For example:
+To see a description of each argument, use `--help`.
 
 ```shell
-./scripts/beautify_logs.py
+./taph.py --help
 ```
+
+## Arguments
+
+### Positional argument
+
+Only one positional argument is always required: `directory`. If `directory` is unassigned, the value of `git rev-parse --show-toplevel` will be used instead.
+
+| Argument    | Default value                   | Description                           |
+|-------------|---------------------------------|---------------------------------------|
+| `directory` | `git rev-parse --show-toplevel` | Your antora project's root directory. |
+
+### Optional arguments
+
+_At least one_ optional argument is required, however you can use more than one at a time to run multiple scripts. For example:
+
+```shell
+$ ./taph.py -b -m
+
+'beautify' ran successfully.
+'minify' ran successfully.
+```
+
+| Argument   | Accepted value(s)  | Go to file                                     | Description                                                                                                                                                       |
+|------------|--------------------|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `help`     | `-h`, `--help`     | N/A                                            | Show this help message and exit.                                                                                                                                  |
+| `quiet`    | `-q`, `--quiet`    | N/A                                            | Suppress all `taph` notifications in the terminal.                                                                                                                |
+| `beautify` | `-b`, `--beautify` | [`./scripts/beautify.py`](scripts/beautify.py) | Beautify your logs by creating an asciidoc table containing cross-references to each file which can be opened from your ide's preview window.                     |
+| `minify`   | `-m`, `--minify`   | [`./scripts/minify.py`](scripts/minify.py)     | Copy all css content from your ui bundle directory into a single, minified file: `site.css`.                                                                      |
+| `csv`      | `-c`, `--csv`      | [`./scripts/csv.py`](scripts/csv.py)           | Generate a `.csv` file containing the urls for the documents in your project's output directory which can be imported later into a spreadsheet.                   |
+| `edit`     | `-e`, `--edit`     | [`./scripts/edit.py`](scripts/edit.py)         | Make the following edits to each `.adoc` file in `./docs/modules/`: fix newlines, fix urls, add modules to asciidoc attributes, add missing spaces after periods. |
