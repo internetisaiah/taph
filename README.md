@@ -2,13 +2,11 @@
 
 `taph`, The Antora Project Helper, is a Python-based, command-line tool allowing you to easily beautify logs, minify CSS files, and more.
 
-These scripts were originally created to help manage my _own_ Antora project, so their usefulness to your own project may vary. Before you understand each script before using them.
-
-You can run one or more script at a time by passing optional arguments to `./taph.py`. For more information, see [Arguments](#arguments).
+These scripts were originally created to help manage my _own_ Antora project, so their usefulness for your project may vary. For more information, see [Arguments](#arguments).
 
 ## Quick start
 
-To run a script, you'll need to install [Python](https://www.python.org/downloads/). Run the following commands to see if it's installed:
+First, check if [Python](https://www.python.org/downloads/) is installed.
 
 ```plaintext
 python --version
@@ -20,13 +18,13 @@ If Python's installed, make `./taph.py` executable in your shell environment.
 chmod +x <path-to-taph>/taph.py
 ```
 
-Pass one or more scripts as optional arguments to `.taph.py`. For example:
+You can pass one or more optional arguments to `./taph.py` in a single command. For example:
 
 ```shell
 ./taph.py -b -m
 ```
 
-To see the full list of arguments, use `--help`.
+To see a description of each argument, use `--help`.
 
 ```shell
 ./taph.py --help
@@ -36,7 +34,7 @@ To see the full list of arguments, use `--help`.
 
 ### Positional argument
 
-Only one positional argument is required: `directory`. If `directory` isn't set, the value of `git rev-parse --show-toplevel` will be used instead.
+Only one positional argument is always required: `directory`. If `directory` is unassigned, the value of `git rev-parse --show-toplevel` will be used instead.
 
 | Argument    | Default value                   | Description                           |
 |-------------|---------------------------------|---------------------------------------|
@@ -44,7 +42,7 @@ Only one positional argument is required: `directory`. If `directory` isn't set,
 
 ### Optional arguments
 
-At least one optional argument is required, however more than one optional argument can be used at once, such as `./taph.py -b -m`.
+_At least one_ optional argument is required, however you can use more than one at a time to run multiple scripts, such as `./taph.py -b -m`.
 
 | Argument   | Accepted value(s)  | Go to file                                     | Description                                                                                                                                                       |
 |------------|--------------------|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
