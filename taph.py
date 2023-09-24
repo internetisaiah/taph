@@ -4,17 +4,17 @@
 
 import subprocess
 import argparse
-from scripts.edit import main as general
 from scripts.beautify import main as beautify
 from scripts.minify import main as minify
 from scripts.csv import main as csv
+from scripts.edit import main as edit
 
 # Dictionary mapping optional arguments to corresponding functions in './scripts'.
 APH_SCRIPTS = {
-    'general': general,
     'beautify': beautify,
     'minify': minify,
-    'csv': csv
+    'csv': csv,
+    'edit': edit
 }
 
 # The Antora project's root directory.
@@ -59,7 +59,7 @@ def main():
         if getattr(args, arg):
             script()
             if not args.quiet:
-                print(f"{arg} successfully executed.")
+                print(f"'{arg}' ran successfully.")
 
     # If no optional argument(s) given, notify user.
     if not any([getattr(args, key) for key in APH_SCRIPTS.keys()]):
