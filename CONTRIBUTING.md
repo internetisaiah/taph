@@ -1,4 +1,4 @@
-# [in-progress] `taph` contributing guidelines
+# `taph` contributing guidelines
 
 Thanks for contributing to `taph`! Everyone here is expected to adhere to the [Code of Conduct](CODE_OF_CONDUCT.md) so be sure to review before contributing.
 
@@ -91,7 +91,7 @@ scripts
 
 ## Code and content style
 
-To ensure consistency for `taph`'s code and content, use the following guidelines:
+Code and content style should adhere to the following:
 
 - [Google's Python Style Guide](https://github.com/google/styleguide/blob/gh-pages/pyguide.md)
 - [Google's Content Style Guide](https://developers.google.com/style/highlights)
