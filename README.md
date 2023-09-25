@@ -1,8 +1,6 @@
 # taph
 
-`taph`, The Antora Project Helper, is a Python-based, command-line tool which enables you to easily beautify logs, minify CSS files, create CSV files, and more.
-
-These scripts were originally created to help manage my _own_ Antora project, so their usefulness for your project may vary. For more information, see [Arguments](#arguments).
+`taph`, The Antora Project Helper, is a Python-based, command-line tool which enables you to easily beautify logs, minify CSS files, create CSV files, and more. These scripts were originally created to help manage my _own_ Antora projects, so their usefulness for you may vary. For more information, see [Arguments](#arguments).
 
 ## Quick start
 
