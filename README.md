@@ -16,13 +16,21 @@ If Python's installed, make `./taph.py` executable in your shell environment.
 chmod +x <path-to-taph>/taph.py
 ```
 
-You can pass one or more optional arguments to `./taph.py` within a single command. For example:
+You can pass one or more optional arguments to `./taph.py`. For example:
+
 
 ```shell
-./taph.py -b -m
+$ ./taph.py -b -m
 ```
 
-To see a description of each argument, use `--help`.
+The output is the following:
+
+```shell
+'beautify' ran successfully.
+'minify' ran successfully.
+```
+
+To see all available arguments, use `--help`.
 
 ```shell
 ./taph.py --help
