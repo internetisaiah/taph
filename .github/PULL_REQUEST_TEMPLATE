@@ -1,0 +1,22 @@
+### Summary
+<!-- In one or two sentences, describe your changes. -->
+
+### Related PRs, issues, or features (optional)
+<!-- Add "Fixes #XYZ" (Replace #XYZ with the GitHub issue or feature number). -->
+- N/A
+
+### Metadata
+<!-- ✅ Check all boxes that apply, like this: [x] -->
+- [ ] Adds new file(s)
+- [ ] Edits existing file(s)
+- [ ] Removes file(s)
+
+### PR contributor checklist
+<!-- Once you've filled out your metadata, select "Create Draft Pull Request" and review your PR _before_ filling out the following checklist. -->
+
+- [ ] My PR follows the [`taph` contributor guidelines](https://github.com/internetisaiah/taphblob/main/CONTRIBUTE.adoc), meaning:
+
+    - My content contains correct spelling and grammar.
+    - My directories and files are [named](https://github.com/internetisaiah/taphblob/main/CONTRIBUTING.md#directory-and-file-names) and [structured](https://github.com/internetisaiah/taphblob/main/CONTRIBUTING.md#directory-structure) correctly.
+    - My style and voice follows the [Google Style Guide](https://developers.google.com/style/highlights).
+    - I removed all localizations (like `en-us`) from my URLs.

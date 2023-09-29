@@ -1,6 +1,12 @@
-# taph
+# `taph`
 
 `taph`, The Antora Project Helper, is a Python-based, command-line tool which enables you to easily beautify logs, minify CSS files, create CSV files, and more. These scripts were originally created to help manage my _own_ Antora projects, so their usefulness to you may vary. For more information about each script, see [Arguments](#arguments).
+
+If you'd like to help improve `taph`, you can:
+
+- [Report an issue](https://github.com/internetisaiah/taph/issues/new?assignees=&labels=issue&projects=&template=report_an_issue.md&title=)
+- [Request a feature](https://github.com/internetisaiah/taph/issues/new?assignees=&labels=enhancement&projects=&template=request_a_feature.md&title=)
+- [Contribute](CONTRIBUTING.md)
 
 ## Quick start
 
@@ -61,7 +67,7 @@ $ ./taph.py -b -m
 |------------|--------------------|------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `help`     | `-h`, `--help`     | N/A                                            | Show this help message and exit.                                                                                                                                  |
 | `quiet`    | `-q`, `--quiet`    | N/A                                            | Suppress all `taph` notifications in the terminal.                                                                                                                |
-| `beautify` | `-b`, `--beautify` | [`./scripts/beautify.py`](scripts/beautify.py) | Beautify your logs by creating an asciidoc table containing cross-references to each file which can be opened from your ide's preview window.                     |
+| `beautify` | `-b`, `--beautify` | [`./scripts/beautify.py`](scripts/beautify.py) | Beautify your logs by creating an asciidoc table containing cross-references to each file which can be opened from your text editor's preview window.                     |
 | `minify`   | `-m`, `--minify`   | [`./scripts/minify.py`](scripts/minify.py)     | Copy all css content from your ui bundle directory into a single, minified file: `site.css`.                                                                      |
 | `csv`      | `-c`, `--csv`      | [`./scripts/csv.py`](scripts/csv.py)           | Generate a `.csv` file containing the urls for the documents in your project's output directory which can be imported later into a spreadsheet.                   |
 | `edit`     | `-e`, `--edit`     | [`./scripts/edit.py`](scripts/edit.py)         | Make the following edits to each `.adoc` file in `./docs/modules/`: fix newlines, fix urls, add modules to asciidoc attributes, add missing spaces after periods. |
