@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-# Antora Docs Site Helper (adsh).
+# taph: The Antora Project Helper.
+# For more information, see: https://github.com/internetisaiah/taph.
 
 import subprocess
 import argparse
@@ -8,13 +9,15 @@ from scripts.beautify import main as beautify
 from scripts.minify import main as minify
 from scripts.csv import main as csv
 from scripts.edit import main as edit
+from scripts.antora import main as antora
 
 # Dictionary mapping optional arguments to corresponding functions in './scripts'.
 APH_SCRIPTS = {
     'beautify': beautify,
     'minify': minify,
     'csv': csv,
-    'edit': edit
+    'edit': edit,
+    'antora': antora
 }
 
 # The Antora project's root directory.
@@ -33,6 +36,9 @@ def main():
                              "(default: the value of 'git rev-parse --show-toplevel')")
     parser.add_argument("-q", "--quiet",
                         help="suppress all 'taph' notifications in the terminal",
+                        action="store_true")
+    parser.add_argument("-a", "--antora",
+                        help="run 'antora' for all antora playbooks in the project",
                         action="store_true")
     parser.add_argument("-b", "--beautify",
                         help="beautify your logs by creating an asciidoc table containing cross-references "
@@ -63,7 +69,7 @@ def main():
 
     # If no optional argument(s) given, notify user.
     if not any([getattr(args, key) for key in APH_SCRIPTS.keys()]):
-        print("At least one optional argument is required for 'aph'. For more information, see '--help'.")
+        print("At least one optional argument is required for 'taph'. For more information, see '--help'.")
 
 
 if __name__ == "__main__":
